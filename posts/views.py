@@ -14,7 +14,8 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
         likes_count=Count('likes', distinct=True),
-        comments_count=Count('comment', distinct=True)
+        comments_count=Count('comment', distinct=True),
+        shares_count=Count('shares', distinct=True),
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -28,6 +29,7 @@ class PostList(generics.ListCreateAPIView):
         'likes_count',
         'comments_count',
         'likes__created_at',
+        'shares_count',
     ]
 
     def perform_create(self, serializer):
@@ -42,5 +44,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.annotate(
         likes_count=Count('likes', distinct=True),
-        comments_count=Count('comment', distinct=True)
+        comments_count=Count('comment', distinct=True),
+        shares_count=Count('comment', distinct=True)
     ).order_by('-created_at')
