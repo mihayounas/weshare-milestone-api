@@ -65,6 +65,11 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost', 'https://weshare-api-app.herokuapp.com']
 
+ALLOWED_HOSTS = [
+    'https://weshare-api-app.herokuapp.com',
+    'localhost',
+]
+
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
