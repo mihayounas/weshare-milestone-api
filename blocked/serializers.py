@@ -1,14 +1,13 @@
 from rest_framework import serializers
+from blocked.models import Blocked
 
-from shares.models import Shares
 
-
-class SharesSerializer(serializers.ModelSerializer):
+class BlockedSerializer(serializers.ModelSerializer):
     """
     Serializer for the Shares model
     """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Shares
-        fields = ['id', 'created_at', 'owner', 'post']
+        model = Blocked
+        fields = ['id', 'owner']

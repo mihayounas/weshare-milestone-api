@@ -14,7 +14,8 @@ class ProfileList(generics.ListAPIView):
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
         following_count=Count('owner__following', distinct=True),
-        shares_count=Count('owner__shares', distinct=True)
+        shares_count=Count('owner__shares', distinct=True),
+        blocked_count=Count('blocked_users', distinct=True),
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
     filter_backends = [
@@ -27,6 +28,7 @@ class ProfileList(generics.ListAPIView):
         'owner__following__created_at',
         'owner__followed__created_at',
         'shares_count',
+        'blocked_count',
     ]
 
 
@@ -38,6 +40,7 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
-        following_count=Count('owner__following', distinct=True)
+        following_count=Count('owner__following', distinct=True),
+        blocked_count=Count('blocked_users', distinct=True),
     ).order_by('-created_at')
     serializer_class = ProfileSerializer

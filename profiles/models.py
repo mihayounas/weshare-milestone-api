@@ -12,6 +12,7 @@ class Profile(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_profile_m2uned'
     )
+    blocked_users = models.ManyToManyField(User, related_name="blocked")
 
     class Meta:
         ordering = ['-created_at']
