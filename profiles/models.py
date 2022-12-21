@@ -10,7 +10,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='https://res.cloudinary.com/df4j1glpo/image/upload/v1668434573/samples/default_profile_m2uned.jpg'
+        upload_to='images/', default='https://res.cloudinary.com/df4j1glpo/image/upload/v1671279356/default_profile_ogr78q.jpg'
     )
     blocked_users = models.ManyToManyField(User, related_name="blocked")
 
