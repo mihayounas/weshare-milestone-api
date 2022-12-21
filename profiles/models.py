@@ -10,7 +10,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='/default_profile_ogr78q.jpg'
+        upload_to='images/', default='/default_profile_erm3in.jpg'
     )
     blocked_users = models.ManyToManyField(User, related_name="blocked")
 
