@@ -31,5 +31,6 @@ urlpatterns = [
     path('', include('likes.urls')),
     path('', include('followers.urls')),
     path('', include('shares.urls')),
-    path('', include('blocked.urls'))
+    path('', include('blocked.urls')),
+    path('', include('news.urls'))
 ]

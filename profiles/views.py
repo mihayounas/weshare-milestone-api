@@ -29,7 +29,7 @@ class ProfileList(generics.ListAPIView):
         'owner__followed__created_at',
         'shares_count',
         'blocked_count',
-    ]
+        ]
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
