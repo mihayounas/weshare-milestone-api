@@ -13,7 +13,7 @@ class StoryList(generics.ListCreateAPIView):
     serializer_class = StorySerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Story.objects.annotate(
-        stories_count=Count('id', distinct=True),
+        stories_count=Count('owner__story', distinct=True),
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -37,10 +37,10 @@ class StoryList(generics.ListCreateAPIView):
 
 class StoryDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve a post and edit or delete it if you own it.
+    Retrieve a story and edit or delete it if you own it.
     """
     serializer_class = StorySerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Story.objects.annotate(
-        story_count=Count('id', distinct=True)
+        story_count=Count('owner__story', distinct=True)
     ).order_by('-created_at')
