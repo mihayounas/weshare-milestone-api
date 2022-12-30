@@ -48,3 +48,4 @@ class PostSerializer(serializers.ModelSerializer):
             'like_id', 'likes_count', 'comments_count',
             'shares_count',
         ]
+        read_only_fields = ('id', 'owner', 'created_at', 'updated_at')
