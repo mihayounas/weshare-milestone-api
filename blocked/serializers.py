@@ -7,7 +7,8 @@ class BlockedSerializer(serializers.ModelSerializer):
     Serializer for the Shares model
     """
     owner = serializers.ReadOnlyField(source='owner.username')
+    users = serializers.ReadOnlyField(source='users.username')
 
     class Meta:
         model = Blocked
-        fields = ['id', 'owner']
+        fields = ['id', 'owner', 'users']

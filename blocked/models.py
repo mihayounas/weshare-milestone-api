@@ -18,5 +18,8 @@ class Blocked(models.Model):
         blocked_users = User.objects.get(username=X).blocked_users.users.all()
         return Post.objects.filter(~Q(author__in=blocked_users))
 
+    class Meta:
+        ordering = ['owner']
+
     def __str__(self):
         return f'{self.owner} {self.users}'
