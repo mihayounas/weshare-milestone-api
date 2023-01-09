@@ -11,7 +11,7 @@ class ShareSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Shares
-        fields = ['id', 'created_at', 'owner', 'post', 'image']
+        fields = ['id', 'created_at', 'owner', 'post']
 
     def create(self, validated_data):
         try:
