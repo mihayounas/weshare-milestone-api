@@ -5,7 +5,7 @@ from posts.models import Post
 
 class Shares(models.Model):
     """
-    Shares model, related to 'owner' and 'post'.
+    Like model, related to 'owner' and 'post'.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
@@ -18,5 +18,4 @@ class Shares(models.Model):
         unique_together = ['owner', 'post']
 
     def __str__(self):
-        return f'{self.owner} {self.post} {self.id}'
-
+        return f'{self.owner} {self.post}'

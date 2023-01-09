@@ -3,5 +3,5 @@ from shares import views
 
 urlpatterns = [
     path('shares/', views.SharesList.as_view()),
-    path('shares/<int:pk>', views.SharesDetail.as_view()),
+    path('shares/<int:pk>/', views.SharesDetail.as_view()),
 ]
