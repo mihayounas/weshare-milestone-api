@@ -16,11 +16,18 @@ class BlockList(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        print(request.data)
+    # Deserialize the request data
         serializer = self.get_serializer(data=request.data)
+
+        # Validate the data
         if serializer.is_valid():
+            # Save the block
             serializer.save()
+
+            # Return a 201 response
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        # If the data is not valid, return a 400 response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
