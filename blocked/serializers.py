@@ -1,14 +1,12 @@
-from rest_framework import serializers
-from blocked.models import Blocked
+from django.shortcuts import get_object_or_404
+from rest_framework import serializers, views, permissions, status
+from rest_framework.response import Response
+from django.utils import timezone
+from blocked.models import Block
 
 
-class BlockedSerializer(serializers.ModelSerializer):
-    """
-    Serializer for the Shares model
-    """
-    owner = serializers.ReadOnlyField(source='owner.username')
-    users = serializers.ReadOnlyField(source='users.username')
-
+# Serializers
+class BlockSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blocked
-        fields = ['id', 'owner', 'users']
+        model = Block
+        fields = ['user', 'reason', 'duration', 'created_at']
