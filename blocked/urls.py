@@ -1,7 +1,7 @@
 from django.urls import path
-from blocked import views
+from .views import BlockList, BlockDetail
 
 urlpatterns = [
-    path('blocked/', views.BlockList.as_view(), name='block-list'),
-    path('blocked/<int:pk>/', views.BlockDetail.as_view(), name='block-detail'),
+    path('blocks/', BlockList.as_view(), name='block-list'),
+    path('blocks/<int:pk>/', BlockDetail.as_view(), name='block-detail'),
 ]
