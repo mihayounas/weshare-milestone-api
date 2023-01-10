@@ -11,11 +11,11 @@ from rest_framework import status
 
 
 class BlockList(generics.ListAPIView):
-    queryset = Block.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = BlockSerializer
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
+        print(request.data)
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
