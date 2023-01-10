@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class BlockList(generics.ListAPIView):
+class BlockList(generics.CreateAPIView):
     queryset = Block.objects.all()
     serializer_class = BlockSerializer
     permission_classes = [IsAuthenticated]
