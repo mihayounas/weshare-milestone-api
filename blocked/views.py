@@ -11,8 +11,9 @@ from rest_framework import status
 
 
 class BlockList(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
+    queryset = Block.objects.all()
     serializer_class = BlockSerializer
+    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         print(request.data)
