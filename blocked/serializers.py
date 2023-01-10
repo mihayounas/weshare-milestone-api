@@ -7,4 +7,4 @@ from blocked.models import Block
 class BlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Block
-        fields = ['user', 'reason', 'duration', 'created_at']
+        fields = ['user', 'reason', 'duration']

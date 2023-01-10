@@ -16,7 +16,7 @@ class BlockList(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-    # Deserialize the request data
+        # Deserialize the request data
         serializer = self.get_serializer(data=request.data)
 
         # Validate the data
