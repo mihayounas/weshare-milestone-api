@@ -5,13 +5,11 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 
 class BlockSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
-    reason = serializers.ReadOnlyField(source='user.reason')
-    duration = serializers.ReadOnlyField(source='user.duration')
-    created_at = serializers.SerializerMethodField()
-
+    blocked_name = serializers.ReadOnlyField(source='blocked.username')
+    
     class Meta:
         model = Block
-        fields = ('user', 'reason', 'duration', 'created_at')
+        fields = ('user', 'reason', 'duration', 'created_at', 'blocked_name')
 
     def get_is_owner(self, obj):
         request = self.context['request']
