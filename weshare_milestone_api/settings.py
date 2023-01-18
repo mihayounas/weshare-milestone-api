@@ -115,6 +115,7 @@ INSTALLED_APPS = [
     'blocked',
     'news',
     'stories',
+    'events',
 ]
 
 SITE_ID = 1

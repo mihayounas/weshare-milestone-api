@@ -1,7 +1,0 @@
-from rest_framework import serializers
-
-
-class EventSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Event
-        fields = ['id', 'name', 'start_time', 'end_time']
