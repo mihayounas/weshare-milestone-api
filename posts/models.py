@@ -28,12 +28,19 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    shares = models.IntegerField(default=0)
     image = models.ImageField(
         upload_to='images/', default='../default_post_rgq6aq', blank=True
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
     )
+
+    def share(self, user):
+        share = Share.objects.create(post=self, user=user)
+        self.shares += 1
+        self.save()
+        return share
 
     class Meta:
         ordering = ['-created_at']

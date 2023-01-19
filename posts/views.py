@@ -36,6 +36,12 @@ class PostList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
+def share_post(request, id):
+    post = get_object_or_404(Post, id=id)
+    post.share()
+    return redirect('post_detail', id=post.id)
+
+
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve a post and edit or delete it if you own it.
