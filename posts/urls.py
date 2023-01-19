@@ -1,5 +1,6 @@
 from django.urls import path
 from posts import views
+from .views import share_post
 
 urlpatterns = [
     path('posts/', views.PostList.as_view()),

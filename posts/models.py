@@ -28,7 +28,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
-    shares = models.IntegerField(default=0)
+    share = models.IntegerField(default=0)
     image = models.ImageField(
         upload_to='images/', default='../default_post_rgq6aq', blank=True
     )
