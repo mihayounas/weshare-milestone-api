@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Event(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     title = models.CharField(max_length=200)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
