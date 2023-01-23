@@ -36,11 +36,10 @@ class Post(models.Model):
         max_length=32, choices=image_filter_choices, default='normal'
     )
 
-    def share(self, user):
-        share = Share.objects.create(post=self, user=user)
-        self.shares += 1
+    def add_share(self, user):
+        Share.objects.create(post=self, user=user)
+        self.share_count += 1
         self.save()
-        return share
 
     class Meta:
         ordering = ['-created_at']

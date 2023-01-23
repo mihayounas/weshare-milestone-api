@@ -41,7 +41,7 @@ class PostList(generics.ListCreateAPIView):
 def share_post(request, id):
     post = get_object_or_404(Post, id=id)
     try:
-        post.share()
+        post.add_share(request.user)
         return Response(status=status.HTTP_200_OK)
     except Exception as e:
         return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
@@ -56,6 +56,5 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.annotate(
         likes_count=Count('likes', distinct=True),
         comments_count=Count('comment', distinct=True),
-        shares_count=Count('comment', distinct=True)
+        shares_count=Count('shares', distinct=True)
     ).order_by('-created_at')
-
