@@ -10,8 +10,5 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         fields = ('owner', 'id', 'title', 'start_time', 'end_time', 'location', 'description', 'created_at', 'updated_at')
 
-    def create(self, validated_data):
-        user = self.context['request'].user
-        if user.is_authenticated:
-            validated_data['owner'] = user
-        return Event.objects.create(**validated_data)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
