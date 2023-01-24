@@ -12,6 +12,13 @@ class SharesList(generics.ListCreateAPIView):
     serializer_class = ShareSerializer
     queryset = Shares.objects.all()
 
+    def post(self, request, format=None):
+        serializer = ShareSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -24,3 +31,6 @@ class SharesDetail(generics.RetrieveDestroyAPIView):
     serializer_class = ShareSerializer
     queryset = Shares.objects.all()
 
+
+
+    
