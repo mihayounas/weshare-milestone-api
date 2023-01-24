@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from shares.models import Shares
+from django.db import IntegrityError
 
 
 class ShareSerializer(serializers.ModelSerializer):
