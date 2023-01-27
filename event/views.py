@@ -18,4 +18,3 @@ class EventListCreateAPIView(generics.ListCreateAPIView):
 class EventDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
