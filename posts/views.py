@@ -3,7 +3,6 @@ from rest_framework import generics, permissions, filters
 from weshare_milestone_api.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
-from rest_framework.decorators import api_view
 
 
 class PostList(generics.ListCreateAPIView):
@@ -35,16 +34,6 @@ class PostList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-
-
-@api_view(['POST'])
-def share_post(request, id):
-    post = get_object_or_404(Post, id=id)
-    try:
-        post.add_share(request.user)
-        return Response(status=status.HTTP_200_OK)
-    except Exception as e:
-        return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
