@@ -10,6 +10,8 @@ class Block(models.Model):
     duration = models.DurationField(blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
 
+    
+
     class Meta:
         ordering = ['-created_at']
 
