@@ -7,11 +7,12 @@ from weshare_milestone_api.permissions import IsOwnerOrReadOnly
 
 class BlockList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Block.objects.all()
     serializer_class = BlockSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    def get_queryset(self):
+        user = self.request.user
+        queryset = Block.objects.filter(blocker=user)
+        return queryset
 
 
 class BlockDetail(generics.RetrieveUpdateDestroyAPIView):

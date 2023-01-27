@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 
 class EventSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField()
+    created_at = serializers.ReadOnlyField()
 
     class Meta:
         model = Event

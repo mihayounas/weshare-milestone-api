@@ -12,4 +12,4 @@ class Shares(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f'{self.id} {self.user.username} shares {self.post.title}'
+        return f'{self.id} {self.owner.username} shares {self.post.title}'

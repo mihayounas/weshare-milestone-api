@@ -4,12 +4,8 @@ from django.utils import timezone
 
 
 class Block(models.Model):
-    user = models.ForeignKey(
-        User, related_name='blocking', on_delete=models.CASCADE
-    )
-    blocked = models.ForeignKey(
-        User, related_name='blocked_user', on_delete=models.CASCADE
-    )
+    blocker = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_blocker')
+    blocked = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_blocked')
     reason = models.CharField(max_length=255)
     duration = models.DurationField(blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
@@ -20,4 +16,4 @@ class Block(models.Model):
     def __str__(self):
         duration_str = self.duration.__str__() if self.duration else ''
         reason_str = self.reason if self.reason else ''
-        return f'Block for user {self.user.username} for reason: {reason_str} and duration: {duration_str}'
+        return f'Block for user {self.blocked.username} for reason: {reason_str} and duration: {duration_str}'
