@@ -12,6 +12,9 @@ class SharesList(generics.ListCreateAPIView):
     queryset = Shares.objects.all()
     serializer_class = SharesSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class SharesDetail(generics.RetrieveDestroyAPIView):
     """
