@@ -4,7 +4,6 @@ from post_shares.models import PostShare
 from post_shares.serializers import PostShareSerializer
 
 
-
 class PostSharesList(generics.ListCreateAPIView):
     """
     List likes or create a like if logged in.
@@ -13,6 +12,8 @@ class PostSharesList(generics.ListCreateAPIView):
     queryset = PostShare.objects.all()
     serializer_class = PostShareSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class PostSharesDetail(generics.RetrieveDestroyAPIView):
