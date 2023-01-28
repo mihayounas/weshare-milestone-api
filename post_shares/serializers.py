@@ -3,16 +3,15 @@ from post_shares.models import PostShare
 
 
 class PostShareSerializer(serializers.ModelSerializer):
-    """
-    Serializer for the Like model
-    The create method handles the unique constraint on 'owner' and 'post'
-    """
-    owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    post = serializers.PrimaryKeyRelatedField(queryset=Post.objects.all())
 
     class Meta:
         model = PostShare
-        fields = ['id', 'created_at', 'owner', 'post']
+        fields = ('owner', 'post')
 
     def create(self, validated_data):
-        share, created = PostShare.objects.get_or_create(owner=validated_data['owner'], post=validated_data['post'])
-        return share
+        owner = validated_data.get('owner')
+        post = validated_data.get('post')
+        post_share = PostShare.objects.create(owner=owner, post=post)
+        return post_share

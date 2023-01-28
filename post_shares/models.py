@@ -8,9 +8,7 @@ class PostShare(models.Model):
     PostShare model, related to 'owner' and 'post'.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(
-        Post, related_name='to_share', on_delete=models.CASCADE
-    )
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
