@@ -3,6 +3,10 @@ from .models import Shares
 
 
 class SharesSerializer(serializers.ModelSerializer):
+    
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    
     class Meta:
         model = Shares
         fields = ('id', 'post', 'owner', 'created_at')
