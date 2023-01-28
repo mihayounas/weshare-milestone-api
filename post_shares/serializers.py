@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from post_shares.models import PostShare
+from django.db import IntegrityError
 
 
 class PostShareSerializer(serializers.ModelSerializer):

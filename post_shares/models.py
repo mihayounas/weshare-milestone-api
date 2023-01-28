@@ -5,7 +5,7 @@ from posts.models import Post
 
 class PostShare(models.Model):
     """
-    Like model, related to 'owner' and 'post'.
+    PostShare model, related to 'owner' and 'post'.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
