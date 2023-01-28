@@ -3,16 +3,13 @@ from .models import PostShare
 
 
 class PostShareSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-
     class Meta:
         model = PostShare
-        fields = ['id', 'created_at', 'owner', 'post']
+        fields = ('id', 'owner', 'post', 'created_at')
+        read_only_fields = ('id', 'created_at')
 
     def create(self, validated_data):
-        try:
-            return super().create(validated_data)
-        except IntegrityError:
-            raise serializers.ValidationError({
-                'detail': 'possible duplicate'
-            })
+        request = self.context.get("request")
+        if request and hasattr(request, "user"):
+            validated_data["owner"] = request.user
+        return super().create(validated_data)

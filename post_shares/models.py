@@ -6,7 +6,7 @@ from posts.models import Post
 class PostShare(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
-        Post, related_name='post_shares', on_delete=models.CASCADE
+        Post, related_name='to_share', on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
