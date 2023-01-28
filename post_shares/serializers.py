@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from post_shares.models import PostShare
-from django.db import IntegrityError
 
 
 class PostShareSerializer(serializers.ModelSerializer):
@@ -14,11 +13,6 @@ class PostShareSerializer(serializers.ModelSerializer):
         model = PostShare
         fields = ['id', 'created_at', 'owner', 'post']
 
-   
     def create(self, validated_data):
-        try:
-            return super().create(validated_data)
-        except IntegrityError as e:
-            raise serializers.ValidationError({
-                'detail': 'possible duplicate'
-            })
+        share, created = PostShare.objects.get_or_create(owner=validated_data['owner'], post=validated_data['post'])
+        return share
