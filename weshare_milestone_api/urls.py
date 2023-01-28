@@ -37,5 +37,6 @@ urlpatterns = [
     path('', include('news.urls')),
     path('', include('stories.urls')),
     path('', include('event.urls')),
+    path('', include('post_shares.urls')),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
 ]

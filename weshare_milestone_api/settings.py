@@ -112,6 +112,7 @@ INSTALLED_APPS = [
     'likes',
     'followers',
     'shares',
+    'post_shares',
     'blocked',
     'news',
     'stories',
