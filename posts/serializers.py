@@ -38,15 +38,7 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return like.id if like else None
         return None
-    
-    def get_share_id(self, obj):
-        user = self.context['request'].user
-        if user.is_authenticated:
-            share = Share.objects.filter(
-                owner=user, post=obj
-            ).first()
-            return share.id if share else None
-        return None
+
 
     class Meta:
         model = Post
