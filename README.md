@@ -4,12 +4,14 @@
 # Table of contents
 1. <strong>[Objective](#objective)</strong>
 2. <strong>[User Experience UX](#experience)</strong>:
-    * [User Stories](#user)
-    * [FlowChart](#flow)
-    * [Site Structure](#structure)
-    * [Project Management](#management)
-3.<strong>Deployment</strong>
-4. <strong>[Acknowledgments](#acknoledge)</strong>
+3. <strong>[User Stories](#user)</strong>
+4.<strong>[FlowChart](#flow)</strong>
+5. <strong>[Site Structure](#structure)</strong>
+6. <strong>[Project Management](#management)</strong>
+7.<strong>[Testing](#test)</strong>
+8. <strong>[Technologies](#technology)</strong>
+9. <strong>[Deployment](#deploy)</strong>
+10. <strong>[Acknowledgments](#acknoledge)</strong>
 
 # Objective <a name="objective"></a>
 
@@ -34,12 +36,11 @@ Users can follow other users and they have the ability to update their own profi
 | As a user | I can block another user so that I hide his content.                                                            |
 
 
-
-![userstories](/static/images/userstory.png)
+![userstories](/static/img/users.png)
 
 ## Flowchart <a name="flow"></a>
 
- The Flowchart for Second Scoop was made in Lucidchart.
+ The Flowchart for WeShare was made in Lucidchart.
  ![lucidchart](/static/img/api.png)
 
 
@@ -47,6 +48,7 @@ Users can follow other users and they have the ability to update their own profi
 * Database
         * To create the database schema, I used an graph modelling tool Graph Models which shows the entire relationship between all models in the database.I would like to mention that blocked was not used on this ocassion and I am planning for better structure.
         After following the steps required to install Graph Models, I then used <a href="https://dreampuf.github.io">dreampuf</a> to present the data in a clear way. 
+
 ![color-scheme](/database.png)
 
 <a name="#objective" >Back to Top </a>
@@ -58,29 +60,25 @@ Users can follow other users and they have the ability to update their own profi
  * In future I am planning on adding Share page, a pin feature.
  * Better Code Structure and organisation.
 
- # Technologies Used <a name="technologies"></a>
+ # Technologies Used <a name="technology"></a>
 ## BACK-END:<a name="packages"></a>
 * [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
 * [Django-Rest-Framework](https://www.django-rest-framework.org/)
 
 
-# Testing:
-WeShare website has been properly tested 
+# Testing <a name="test"></a>
+WeShare website has been properly tested .
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
-[PEP8](/static/img/Screenshot%202023-01-30%20at%2005.47.18.png)
+![PEP8](/static/img/Screenshot%202023-01-30%20at%2005.47.18.png)
+
 # Browser Compatibility
 WeShare site was tested on the following browsers with no visible issues for the user:
 1. Google Chrome 
 2. Safari 
 3. Mozilla Firefox
 * Appearance, functionality and responsiveness were consistent throughout for a range of browsers and device sizes. 
-
-# Known bugs:
-* ### Resolved
-
-]
 
 # Deployment: <a name="deploy"></a>
 
@@ -100,7 +98,6 @@ The steps to deploy a site are as follows:
   1. In the GitHub repository, navigate to the **Settings** tab.
   2. Once in Settings, navigate to the **Pages** on the left side menu.
 
- The live link to the Github repository can be found here :https://github.com/mihayounas/second-scoop-milestone-4 .
 
  ### **To create a local clone of this project**<a name="clone"></a>
 The method from cloning a project from GitHub is below:
