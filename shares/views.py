@@ -24,6 +24,3 @@ class SharesDetail(generics.RetrieveDestroyAPIView):
     serializer_class = SharesSerializer
     queryset = Shares.objects.all()
 
-
-
-    

@@ -1,108 +1,126 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **_WeShare_**
 
-Welcome mihayounas,
+<a href="https://weshare-api-app.herokuapp.com/" target="_blank" rel="noopener">WeShare API</a>(press for Live DEMO) is a website designed as a "real world api" for <a href="https://weshare-media.herokuapp.com/">WeShare - Media</a>
+# Table of contents
+1. <strong>[Objective](#objective)</strong>
+2. <strong>[User Experience UX](#experience)</strong>:
+    * [User Stories](#user)
+    * [FlowChart](#flow)
+    * [Site Structure](#structure)
+    * [Project Management](#management)
+3.<strong>Deployment</strong>
+4. <strong>[Acknowledgments](#acknoledge)</strong>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Objective <a name="objective"></a>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* The major goal was to implement the functionality to handle all the data needed to create a fully functional social media platform. The API has full CRUD(create,read,update and delete) functionality which lets registered users upload their own posts with the optional ability to include a title, image and content. The posts can be edited or deleted as long as you are the owner. In addition, signed in users can also comment, like or share on posts.
 
-## Gitpod Reminders
+Users can follow other users and they have the ability to update their own profile.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# UX
 
-`python3 -m http.server`
+## User Stories <a name="user"></a>
+* User
 
-A blue button should appear to click: _Make Public_,
+| As a User | I can create a profile that I can take advantage of different features like,create post or share.               |
+|-----------|-----------------------------------------------------------------------------------------------------------------|
+| As a User | I edit my profile so that I can easily change profile picture, or change username.                              |
+| As a User | I can share stories so that I can share beautiful locations.                                                    |
+| As a User | I can view news so that I can stay informed.                                                                    |
+| As a User |  I like posts so that I can show my interests.                                                                  |
+| As a User |  I can follow other users so that I can easily connect with them .                                              |
+| As a User |  I can create events so that I can invite people to join in.                                                    |
+| As a User | I can create, update and delete comments on each post so that I can connect and share opinions with other users.|
+| As a user | I can block another user so that I hide his content.                                                            |
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+![userstories](/static/images/userstory.png)
 
-Another blue button should appear to click: _Open Browser_.
+## Flowchart <a name="flow"></a>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ The Flowchart for Second Scoop was made in Lucidchart.
+ ![lucidchart](/static/img/api.png)
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Project Management <a name="management"></a>
+* Database
+        * To create the database schema, I used an graph modelling tool Graph Models which shows the entire relationship between all models in the database.I would like to mention that blocked was not used on this ocassion and I am planning for better structure.
+        After following the steps required to install Graph Models, I then used <a href="https://dreampuf.github.io">dreampuf</a> to present the data in a clear way. 
+![color-scheme](/database.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<a name="#objective" >Back to Top </a>
 
-------
+ * Welcome message <a name="menu"></a> - A welcome message with the name of WeShareApi.
 
-## Release History
+ # Future Features<a name="future-features"></a> 
+ * Planning to use Blocked as on this occasion I did not use it.
+ * In future I am planning on adding Share page, a pin feature.
+ * Better Code Structure and organisation.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+ # Technologies Used <a name="technologies"></a>
+## BACK-END:<a name="packages"></a>
+* [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
+* [Django-Rest-Framework](https://www.django-rest-framework.org/)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+# Testing:
+WeShare website has been properly tested 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+ ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
+ Pep8 Results
+[PEP8](/static/img/Screenshot%202023-01-30%20at%2005.47.18.png)
+# Browser Compatibility
+WeShare site was tested on the following browsers with no visible issues for the user:
+1. Google Chrome 
+2. Safari 
+3. Mozilla Firefox
+* Appearance, functionality and responsiveness were consistent throughout for a range of browsers and device sizes. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+# Known bugs:
+* ### Resolved
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+]
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+# Deployment: <a name="deploy"></a>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* The site was deployed to Heroku pages.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+1. First we have to create our app on heroku website.
+![createapp](/static/img/create1.png)
+2. Name the app.
+![create2](/static/img/create-app.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+3. Choose Deploy Section and Connect to Github.
+![heroku](/static/img/deploy.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+ 
+* The site was deployed to GitHub pages. 
+The steps to deploy a site are as follows:
+  1. In the GitHub repository, navigate to the **Settings** tab.
+  2. Once in Settings, navigate to the **Pages** on the left side menu.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+ The live link to the Github repository can be found here :https://github.com/mihayounas/second-scoop-milestone-4 .
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+ ### **To create a local clone of this project**<a name="clone"></a>
+The method from cloning a project from GitHub is below:
+1. Under the repository’s name, click on the **code** tab.
+2. In your preffered IDE open **Git Bash**
+3. Change the working directory with the location where you would like your clone to be created .
+4. Type **git clone** and the paste the URL copied previously.
+5. **Enter** button to be pressed and the clone will be created.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+# Credits<a name="credits"></a>
 
-------
+* Tutors and Mentor were very helpful in making me understand the issues I have encountered throughout.
+* Please note that some models are inspired by the walkthrough project done with Code Institute.
+* Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+ # Acknowledgements <a name="acknoledge"></a>
+The site was completed as a Portfolio Project 5 DJANGO REST FRAMEWORK - Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor Jubril Akolade and Code Institute Tutor Support for their help and support.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+Mihaela Younas 2023.
 
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+<a href="#objective" dir='auto'>Back to Top </a>
