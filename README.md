@@ -67,7 +67,34 @@ Users can follow other users and they have the ability to update their own profi
 
 
 # Testing <a name="test"></a>
-WeShare website has been properly tested .
+WeShare website has been tested as followed:
+
+## Manual Testing was performed for :
+* Events : 
+The setUp method is used to set up the test environment by creating a user and an event object with some predefined attributes.
+
+The first test case, test_event_saved_correctly, verifies that the event is saved correctly by checking that the attributes of the event object created in setUp match the expected values.
+
+The second test case, test_is_owner_method, tests the is_owner method of the Event model.
+
+* Posts:
+
+In the setUp method, two user objects are created to set up the test environment.
+
+The first test case, test_follower_creation, creates a Follower object with the owner and followed fields set to the two user objects created in setUp. This test case checks that the created Follower object has the expected attributes, including a non-null created_at field.
+
+The second test case, test_duplicate_follower_creation, creates a Follower object with the same owner and followed fields as the Follower object created in the previous test case. This test case checks that trying to create this duplicate Follower object raises an exception.
+
+The third test case, test_follower_ordering, creates two Follower objects with different owners and follows, and checks that they are ordered correctly when retrieved from the database by the created_at field, in descending order. 
+
+* Followers :
+The setUp method is used to set up the test environment by creating two user objects.
+
+The first test case, test_follower_creation, tests that a Follower object can be created successfully and that its attributes match the expected values.
+
+The second test case, test_duplicate_follower_creation, tests that creating a Follower object with the same owner and followed as an existing Follower object raises an exception.
+
+The third test case, test_follower_ordering, tests that the Follower objects are ordered correctly by the created_at field in descending order.
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
@@ -93,6 +120,11 @@ WeShare site was tested on the following browsers with no visible issues for the
 ![heroku](/static/img/deploy.png)
 
  
+ 4. ## Connect Database : 
+ * ElephantSQL is a cloud-based PostgreSQL database hosting service that provides an easy and reliable way to deploy, manage, and scale PostgreSQL databases in the cloud.
+ * A convenient and scalable way to store and manage data, allowing you to focus on developing your API logic without worrying about the underlying database infrastructure.
+
+
 * The site was deployed to GitHub pages. 
 The steps to deploy a site are as follows:
   1. In the GitHub repository, navigate to the **Settings** tab.
