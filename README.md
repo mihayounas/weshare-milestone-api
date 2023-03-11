@@ -69,7 +69,7 @@ Users can follow other users and they have the ability to update their own profi
 # Testing <a name="test"></a>
 WeShare website has been tested as followed:
 
-## Manual Testing was performed for :
+## Unit Testing was performed for :
 * Events : 
 The setUp method is used to set up the test environment by creating a user and an event object with some predefined attributes.
 
@@ -95,6 +95,38 @@ The first test case, test_follower_creation, tests that a Follower object can be
 The second test case, test_duplicate_follower_creation, tests that creating a Follower object with the same owner and followed as an existing Follower object raises an exception.
 
 The third test case, test_follower_ordering, tests that the Follower objects are ordered correctly by the created_at field in descending order.
+## Manual Testing endpoints:
+### Posts 
+- Verify that you receive a response from the server. The response should include a list of posts in JSON format, with each post represented as a dictionary of key-value pairs.
+
+- verify if logged in user can edit and save the post.
+- verify if another user can edit or delete the posts if it's not his own.
+
+![Posts1](/static/img/posts.png)
+![Posts2](/static/img/post-edit.png)
+
+### Profiles 
+- verify if logged in user can edit and save/delete the profile.
+- verify if another user can edit or delete the profiles if it's not his own.
+
+![Posts2](/static/img/different%20profiles.png)
+
+### Likes 
+- verify if user can like or delete a like 
+
+![Likes](/static/img/likes.png)
+
+### Stories 
+c
+
+![stories](/static/img/story.png)
+![stories](/static/img/story%20detsils.png)
+
+### Events 
+- verify if logged in user can edit and save/delete the event.
+- verify if another user can edit or delete the events if it's not his own.
+
+![Events](/static/img/edit%20event.png)
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
@@ -115,8 +147,25 @@ WeShare site was tested on the following browsers with no visible issues for the
 ![createapp](/static/img/create1.png)
 2. Name the app.
 ![create2](/static/img/create-app.png)
+3. Add the following config vars:
 
-3. Choose Deploy Section and Connect to Github.
+SECRET_KEY: (Your secret key)
+DATABASE_URL: (ElephantSQL key)
+ALLOWED_HOST:
+CLIENT_ORIGIN: url for the client front end react application that wil be making requests to these APIs
+CLIENT_ORIGIN_DEV: address of the local server used to preview and test UI during development of the front end client application
+CLOUDINARY_URL
+
+Click the deploy tab
+
+Scroll down to Connect to GitHub and sign in / authorize when prompted
+
+In the search box, find the repositoy you want to deploy and click connect
+
+Scroll down to Manual deploy and choose the main branch
+
+Click deploy
+
 ![heroku](/static/img/deploy.png)
 
  
@@ -148,7 +197,7 @@ The method from cloning a project from GitHub is below:
 
 
  # Acknowledgements <a name="acknoledge"></a>
-The site was completed as a Portfolio Project 5 DJANGO REST FRAMEWORK - Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor Jubril Akolade and Code Institute Tutor Support for their help and support.
+The site was completed as a Portfolio Project 5 DJANGO REST FRAMEWORK - Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank Code Institute Tutor Support for their help and support.
 
 Mihaela Younas 2023.
 
