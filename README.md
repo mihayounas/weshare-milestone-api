@@ -34,9 +34,7 @@
 
 * Users can follow other users and they have the ability to update their own profile.
 
-# UX
-
-## User Stories <a name="user"></a>
+# User Stories <a name="user"></a>
 * User
 
 | As a User | I can create a profile that I can take advantage of different features like,create post or share.               |
