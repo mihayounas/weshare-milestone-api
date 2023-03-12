@@ -16,8 +16,23 @@
 # Objective <a name="objective"></a>
 
 * The major goal was to implement the functionality to handle all the data needed to create a fully functional social media platform. The API has full CRUD(create,read,update and delete) functionality which lets registered users upload their own posts with the optional ability to include a title, image and content. The posts can be edited or deleted as long as you are the owner. In addition, signed in users can also comment, like or share on posts.
+* User Registration: The API should provide endpoints for users to register for the platform by providing basic information such as name, email address, and password.
 
-Users can follow other users and they have the ability to update their own profile.
+* User Authentication: The API should provide endpoints for users to authenticate themselves by logging in with their registered email and password.
+
+* User Profile: The API should provide endpoints for registered users to create a profile that includes information such as their name, profile picture, bio, and other optional details.
+
+* Post Creation: The API should provide endpoints for registered users to create new posts by uploading an image and adding a title and content. 
+
+* Post Editing: The API should provide endpoints for registered users to edit their own posts, including the title, content, and image.
+
+* Post Deletion: The API should provide endpoints for registered users to delete their own posts.
+
+* Commenting: The API should provide endpoints for signed-in users to leave comments on posts created by other users.
+
+* Liking: The API should provide endpoints for signed-in users to "like" posts created by other users.
+
+* Users can follow other users and they have the ability to update their own profile.
 
 # UX
 
