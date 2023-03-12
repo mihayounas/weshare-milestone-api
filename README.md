@@ -103,13 +103,13 @@ The third test case, test_follower_ordering, tests that the Follower objects are
 - verify if another user can edit or delete the posts if it's not his own.
 
 ![Posts1](/static/img/posts.png)
-![Posts2](/static/img/post-edit.png)
 
 ### Profiles 
 - verify if logged in user can edit and save/delete the profile.
 - verify if another user can edit or delete the profiles if it's not his own.
 
-![Posts2](/static/img/different%20profiles.png)
+![Profile](/static/img/profile.png)
+![Profile2](/static/img/different-profiles.png)
 
 ### Likes 
 - verify if user can like or delete a like 
@@ -117,7 +117,8 @@ The third test case, test_follower_ordering, tests that the Follower objects are
 ![Likes](/static/img/likes.png)
 
 ### Stories 
-c
+- verify if logged in user can edit and save/delete the stories.
+- verify if another user can edit or delete the stories if it's not his own.
 
 ![stories](/static/img/story.png)
 ![stories](/static/img/story%20detsils.png)
@@ -126,7 +127,7 @@ c
 - verify if logged in user can edit and save/delete the event.
 - verify if another user can edit or delete the events if it's not his own.
 
-![Events](/static/img/edit%20event.png)
+![Events](/static/img/edit-event.png)
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
@@ -147,14 +148,16 @@ WeShare site was tested on the following browsers with no visible issues for the
 ![createapp](/static/img/create1.png)
 2. Name the app.
 ![create2](/static/img/create-app.png)
+![config](/static/img/config.png)
+
 3. Add the following config vars:
 
-SECRET_KEY: (Your secret key)
-DATABASE_URL: (ElephantSQL key)
-ALLOWED_HOST:
-CLIENT_ORIGIN: url for the client front end react application that wil be making requests to these APIs
-CLIENT_ORIGIN_DEV: address of the local server used to preview and test UI during development of the front end client application
-CLOUDINARY_URL
+* SECRET_KEY: (Your secret key)
+* DATABASE_URL: (ElephantSQL key)
+* ALLOWED_HOST:
+* CLIENT_ORIGIN: url for the client front end react application that wil be making requests to these APIs
+* CLIENT_ORIGIN_DEV: address of the local server used to preview and test UI during development of the front end client application
+* CLOUDINARY_URL - to store the images .
 
 Click the deploy tab
 
@@ -169,7 +172,7 @@ Click deploy
 ![heroku](/static/img/deploy.png)
 
  
- 4. ## Connect Database : 
+ 4. ### Connect Database : 
  * ElephantSQL is a cloud-based PostgreSQL database hosting service that provides an easy and reliable way to deploy, manage, and scale PostgreSQL databases in the cloud.
  * A convenient and scalable way to store and manage data, allowing you to focus on developing your API logic without worrying about the underlying database infrastructure.
 
