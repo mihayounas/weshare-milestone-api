@@ -190,12 +190,6 @@ Click deploy
  * A convenient and scalable way to store and manage data, allowing you to focus on developing your API logic without worrying about the underlying database infrastructure.
 
 
-* The site was deployed to GitHub pages. 
-The steps to deploy a site are as follows:
-  1. In the GitHub repository, navigate to the **Settings** tab.
-  2. Once in Settings, navigate to the **Pages** on the left side menu.
-
-
  ### **To create a local clone of this project**<a name="clone"></a>
 The method from cloning a project from GitHub is below:
 1. Under the repository’s name, click on the **code** tab.
