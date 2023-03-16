@@ -110,37 +110,55 @@ The second test case, test_duplicate_follower_creation, tests that creating a Fo
 The third test case, test_follower_ordering, tests that the Follower objects are ordered correctly by the created_at field in descending order.
 ## Manual Testing endpoints:
 ### Posts 
+
 - Verify that you receive a response from the server. The response should include a list of posts in JSON format, with each post represented as a dictionary of key-value pairs.
+![Posts1](/static/img/post-list.png)
 
 - verify if logged in user can edit and save the post.
-- verify if another user can edit or delete the posts if it's not his own.
+![Posts2](/static/img/post-details.png)
 
-![Posts1](/static/img/posts.png)
+- verify if another user can edit or delete the posts if it's not his own.
+![Posts3](/static/img/diff-posts.png)
 
 ### Profiles 
+- Verify that you receive a response from the server. The response should include a list of profiles in JSON format, with each profile ost represented as a dictionary of key-value pairs.
+![Profile3](/static/img/profile-list.png)
+
 - verify if logged in user can edit and save/delete the profile.
+![Profile](/static/img/profiles.png)
+
 - verify if another user can edit or delete the profiles if it's not his own.
+![Profile2](/static/img/diff-profile.png)
 
-![Profile](/static/img/profile.png)
-![Profile2](/static/img/different-profiles.png)
+### Likes
+- Verify that you receive a response from the server. The response should include a list of likes in JSON format, with each like represented as a dictionary of key-value pairs.
+![Likes](/static/img/like-list.png)
 
-### Likes 
-- verify if user can like or delete a like 
-
-![Likes](/static/img/likes.png)
+- verify if user can like or delete a like if it's not his own.
+![Likes1](/static/img/likes-details.png)
+![Likes2](/static/img/diff-list.png)
 
 ### Stories 
-- verify if logged in user can edit and save/delete the stories.
-- verify if another user can edit or delete the stories if it's not his own.
 
-![stories](/static/img/story.png)
-![stories](/static/img/story%20detsils.png)
+- Verify that you receive a response from the server. The response should include a list of stories in JSON format, with each story represented as a dictionary of key-value pairs.
+![stories](/static/img/story-list.png)
+
+- verify if logged in user can edit and save/delete the stories.
+![stories](/static/img/own-story.png)
+
+- verify if another user can edit or delete the stories if it's not his own.
+![stories](/static/img/diff-story.png)
 
 ### Events 
-- verify if logged in user can edit and save/delete the event.
-- verify if another user can edit or delete the events if it's not his own.
+- Verify that you receive a response from the server. The response should include a list of posts in JSON format, with each post represented as a dictionary of key-value pairs.
+![Events](/static/img/event-list.png)
 
-![Events](/static/img/edit-event.png)
+- verify if logged in user can edit and save/delete the event.
+![Events](/static/img/no-event-edit.png)
+
+- verify if another user can edit or delete the events if it's not his own.
+![Events](/static/img/no-delete.png)
+
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
