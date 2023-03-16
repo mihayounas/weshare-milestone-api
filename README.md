@@ -206,6 +206,10 @@ Click deploy
  4. ### Connect Database : 
  * ElephantSQL is a cloud-based PostgreSQL database hosting service that provides an easy and reliable way to deploy, manage, and scale PostgreSQL databases in the cloud.
  * A convenient and scalable way to store and manage data, allowing you to focus on developing your API logic without worrying about the underlying database infrastructure.
+ * Firstly : Create an instance 
+![db](/static/img/create.png)
+![db1](/static/img/nameit.png)
+![db2](/static/img/db1.png)
 
 
  ### **To create a local clone of this project**<a name="clone"></a>
