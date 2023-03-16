@@ -229,7 +229,7 @@ The method from cloning a project from GitHub is below:
 
 
  # Acknowledgements <a name="acknoledge"></a>
-The site was completed as a Portfolio Project 5 DJANGO REST FRAMEWORK - Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank Code Institute Tutor Support for their help and support.
+The site was completed as a Portfolio Project 5 DJANGO REST FRAMEWORK - Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank Code Institute Tutor Support for their help and Gareth McGirr which took his time to help me revise .
 
 Mihaela Younas 2023.
 
